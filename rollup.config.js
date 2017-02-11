@@ -12,20 +12,23 @@ const extras = {
 		livereload({ watch: 'dist', verbose: true })
 	],
 	production: () => [
-		filesize(),
 		uglify()
 	]
 }[process.env.NODE_ENV || 'development'];
+
+let cache;
 
 module.exports = {
 	entry: 'src/index.js',
 	dest: 'dist/bundle.js',
 	format: 'iife',
+	cache,
 	plugins: [
 		node({ jsnext: true, main: true }),
 		commonjs({ sourceMap: false }),
 		buble({ jsx: 'h' }),
-		...extras()
+		...extras(),
+		filesize()
 	],
 	sourceMap: true
 }
