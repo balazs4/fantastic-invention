@@ -729,6 +729,10 @@ magic-string@^0.19.0:
   dependencies:
     vlq "^0.2.1"
 
+material-design-lite@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/material-design-lite/-/material-design-lite-1.3.0.tgz#d004ce3fee99a1eeb74a78b8a325134a5f1171d3"
+
 micromatch@^2.1.5:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
@@ -885,6 +889,14 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+preact-mdl@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/preact-mdl/-/preact-mdl-2.2.0.tgz#90cf4a003e343da9b5320678a992180a0a72dee4"
+
+preact-router@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.4.1.tgz#2dbf1756724eb2b0c401678c6cee5af2e7a2ccb8"
 
 preact@^7.2.0:
   version "7.2.0"
