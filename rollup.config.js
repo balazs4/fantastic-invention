@@ -11,11 +11,10 @@ const extras = {
 		serve({ contentBase: 'dist', historyApiFallback: true, port: 3000 }),
 		livereload({ watch: 'dist', verbose: true })
 	],
-	production: () =>
-		[
-			filesize(),
-			uglify()
-		]
+	production: () => [
+		filesize(),
+		uglify()
+	]
 }[process.env.NODE_ENV || 'development'];
 
 module.exports = {
