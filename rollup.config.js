@@ -1,18 +1,10 @@
-const buble = require('rollup-plugin-buble');
-const commonjs = require('rollup-plugin-commonjs');
-const node = require('rollup-plugin-node-resolve');
-const filesize = require('rollup-plugin-filesize');
-const serve = require('rollup-plugin-serve');
-const livereload = require('rollup-plugin-livereload');
-const uglify = require('rollup-plugin-uglify');
-
 const extras = {
 	development: () => [
-		serve({ contentBase: 'dist', historyApiFallback: true, port: 3000 }),
-		livereload({ watch: 'dist', verbose: true })
+		require('rollup-plugin-serve')({ contentBase: 'dist', historyApiFallback: true, port: 3000 }),
+		require('rollup-plugin-livereload')({ watch: 'dist', verbose: true })
 	],
 	production: () => [
-		uglify()
+		require('rollup-plugin-uglify')()
 	]
 }[process.env.NODE_ENV || 'development'];
 
@@ -24,11 +16,17 @@ module.exports = {
 	format: 'iife',
 	cache,
 	plugins: [
-		node({ jsnext: true, main: true }),
-		commonjs({ sourceMap: false }),
-		buble({ jsx: 'h' }),
+		require('rollup-plugin-alias')({
+			'preact-mdl': require('path').resolve(__dirname, 'node_modules', 'preact-mdl', 'src', 'index.js')
+		}),
+		require('rollup-plugin-node-resolve')({ jsnext: true, main: true }),
+		require('rollup-plugin-commonjs')({ sourceMap: false }),
+		require('rollup-plugin-babel')({
+			babelrc: true,
+			include: ['src/**','node_modules/preact-mdl/**']
+		}),
 		...extras(),
-		filesize()
+		require('rollup-plugin-filesize')()
 	],
 	sourceMap: true
 }
