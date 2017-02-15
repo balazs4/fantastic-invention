@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { Router, Link } from 'preact-router';
 import 'material-design-lite';
-import {Button} from 'preact-mdl'
+import Button from 'preact-mdl'
 
 const Home = () => <h1>Home</h1>
 const GettingStarted = () => <h1>Getting started</h1>
