@@ -21,5 +21,26 @@
     "preact": "^7.2.0",
     "preact-mdl": "^2.2.0",
     "preact-router": "^2.4.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest",
+        {
+          "es2015": {
+            "modules": false
+          }
+        }
+      ],
+      "stage-2"
+    ],
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
   }
 }
