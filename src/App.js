@@ -14,7 +14,10 @@ export default () => (
     <Router>
       <Home path="/home" />
       <About path="/about/:id?" />
+      <GettingStarted path='/gettigstarted'></GettingStarted>
       <Home path="/" />
     </Router>
   </div>
 );
+
+
