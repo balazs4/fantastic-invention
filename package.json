@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack -p",
     "start": "cross-env NODE_ENV=development webpack",
     "lint:all": "prettier --write --single-quote 'webpack.config.js' './src/**/*.js'",
-    "lint": "prettier --single-quote",
+    "lint": "prettier --single-quote"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
