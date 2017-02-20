@@ -1,10 +1,9 @@
-import { h } from "preact";
-import { Router, Link } from "preact-router";
-import "material-design-lite";
-import { Button } from "preact-mdl";
+import { h } from 'preact';
+import { Router, Link } from 'preact-router';
+import 'material-design-lite';
+import { Button } from 'preact-mdl';
 
 const Home = () => <h1>Home</h1>;
-const GettingStarted = () => <h1>Getting started</h1>;
 const About = ({ id }) => <h1>About of {id}</h1>;
 
 export default () => (
@@ -14,10 +13,7 @@ export default () => (
     <Router>
       <Home path="/home" />
       <About path="/about/:id?" />
-      <GettingStarted path='/gettigstarted'></GettingStarted>
       <Home path="/" />
     </Router>
   </div>
 );
-
-
